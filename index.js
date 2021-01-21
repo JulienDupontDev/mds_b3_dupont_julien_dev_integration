@@ -1,6 +1,5 @@
 'use strict';
 
-
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -23,7 +22,7 @@ let colors = [].concat(DEFAULT_COLORS);
  * Returns a list of colors
  * Response body (JSON): {results: [....]}
  */
-app.get('/colors', function(req, res, next) {
+app.get('/colors', function (req, res, next) {
   res.json({
     results: colors
   });
@@ -33,7 +32,7 @@ app.get('/colors', function(req, res, next) {
  * Inserts new color in the 'colors' array
  * Request body (JSON): {color: ...}
  */
-app.post('/colors', function(req, res, next) {
+app.post('/colors', function (req, res, next) {
   if (req.is('application/json') && typeof req.body.color === 'string') {
     let color = req.body.color.trim().toUpperCase();
 
